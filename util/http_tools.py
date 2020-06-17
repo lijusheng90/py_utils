@@ -43,3 +43,8 @@ def example_raw_json():
 if __name__ == "__main__":
     example_raw_json()
 
+    '''
+    requests timeout
+    timeout = 5 连接(connect)超时为5秒
+    timeout = (5, 10) 连接(connect)超时为5秒,读取(read)超时为 10秒
+    '''
