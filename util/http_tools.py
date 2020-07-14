@@ -12,9 +12,9 @@ def tool_request_post(url, post_data, headers, timeout_t=(5, 10)):
         return None
 
 
-def tool_request_get(url, get_data, timeout_t=(5, 10)):
+def tool_request_get(url, get_data, headers, timeout_t=(5, 10)):
     try:
-        req = requests.get(url, timeout=timeout_t, params=get_data)
+        req = requests.get(url, timeout=timeout_t, params=get_data, headers=headers)
         # print(req.text)
         data = json.loads(req.text)
         return data
