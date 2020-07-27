@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 def is_valid_date(string, date_format="%Y-%m-%d"):
     try:
         datetime.strptime(string, date_format)
-    except:
+    except ValueError:
         return False
     return True
 
@@ -30,3 +30,12 @@ def calculate_age(date_of_birth, date_format="%Y-%m-%d"):
         age -= 1
     return max(1, age)
 
+
+def string_to_datetime(date_s, date_format="%Y-%m-%d"):
+    return datetime.strptime(date_s, date_format)
+
+
+if __name__ == "__main__":
+    print(is_valid_date("1999-01-02"))
+    print(is_valid_date("cccc-01-02"))
+    print(string_to_datetime("1999-01-02"))
